@@ -52,6 +52,7 @@ RUN echo LS_COLORS=$LS_COLORS:\'di=1\;33:ln=36\' >> ~/.bashrc \
         && echo export LS_COLORS >> ~/.bashrc \
         && echo 'source ./.powerline.sh' >> ~/.bashrc \
         && echo 'alias tmux="tmux -2"' >> ~/.bashrc \
+        && echo 'PATH=~/bin:$PATH' >> ~/.bashrc \
         && touch ~/.sudo_as_admin_successful # To surpress the sudo message at run.
 
 RUN rosdep update \
