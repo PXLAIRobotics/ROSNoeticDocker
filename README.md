@@ -1,7 +1,7 @@
 # ROSNoeticDocker
 This repository contains the necessary elements (code and artifacts) to build a
 ROS Noetic container suitable to execute GUI applications in Nvidia and
-non-NVidia docker environments. It includes the possibility to run simulations
+non-Nvidia docker environments. It includes the possibility to run simulations
 for the TurtleBot 3 robot.
 
 The container is equipped with a few development and network-debug tools such as
@@ -13,13 +13,13 @@ any issue.
 * A UNIX-like operating system, preferably Linux. (Ubuntu 20.04 is recommended.)
 * The `glxinfo` command. (It's included with the `mesa-utils` package on Ubuntu.)
 * An operational docker daemon.
-* A terminal with a Nerd Fond is highly recommended. ([Nerd Font Download page](https://www.nerdfonts.com/font-downloads))
+* A terminal with a Nerd Font is highly recommended. ([Nerd Font Download page](https://www.nerdfonts.com/font-downloads))
 * Standard Bash and basic ROS knowledge.
 * A Nvidia graphics card capable of running hardware accelerated
   graphics. Although, any recent AMD or Intel GPU will also work flawlessly.
 
 ## How to build the container
-A bash script is provided to build the container, it's execute by entering the
+A bash script is provided to build the container, it can be executed by entering the
 following command:
 
 ```bash
@@ -47,10 +47,10 @@ Thanks to the included `install_turtlebot3.sh`, which resides in the
 script from a bash process inside the `pxl_ra_noetic_full_desktop` container,
 followed by a `source` of the `~/.bashrc` file.  Thanks to a mounted volume, the
 Turtlebot3 will be available in the current as well as all new containers
-started with the provide `0002` script.
+that are started with the provided `0002` script.
 
 ## How to run the TurtleBot 3 simulations
-There are three types of Turtlebot3 to choose from, a environment variable sets
+There are three types of Turtlebot3 to choose from, an environment variable sets
 the desired one. Use the `export` bash command to set this variable.  The
 following table depicts the possible values.
 
@@ -87,7 +87,7 @@ submitting the following command to bash:
 ```
 
 To control the robot via the keyboard a *teleop* node needs to be started in a
-separated Bash shell, after executing the correct export command to set the
+separated Bash shell, after executing the export command to set the
 correct robot type.
 
 For example to control the burger in the auto racetrack:
