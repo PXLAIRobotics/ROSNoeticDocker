@@ -43,7 +43,7 @@ To use multiple bash shells in the container, It's advised to either work with
 
 ## How to install the Turtlebot3
 Thanks to the included `install_turtlebot3.sh`, which resides in the
-`Commands/bin` directory, installing the Turtlebot3 is a breeze.  Execute the
+`bin` directory, installing the Turtlebot3 is a breeze.  Execute the
 script from a bash process inside the `pxl_ra_noetic_full_desktop` container,
 followed by a `source` of the `~/.bashrc` file.  Thanks to a mounted volume, the
 Turtlebot3 will be available in the current as well as all new containers
