@@ -30,6 +30,8 @@ RUN set -x \
         && echo "user:user" | chpasswd && adduser user sudo \
         && echo "user ALL=(ALL) NOPASSWD: ALL " >> /etc/sudoers
 
+# The OSRF contianer didn't link python3 to python, causing ROS scripts to fail.
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 USER user
 WORKDIR /home/user
