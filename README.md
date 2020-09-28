@@ -13,9 +13,10 @@ any issue.
 * A UNIX-like operating system, preferably Linux. (Ubuntu 20.04 is recommended.)
 * The `glxinfo` command. (It's included with the `mesa-utils` package on Ubuntu.)
 * An operational docker daemon.
-* Preferably a Nvidia graphics card capable of running hardware accelerated
-  graphics. Although, any recent AMD or Intel GPU will also work.
+* A terminal with a Nerd Fond is highly recommended. ([Nerd Font Download page](https://www.nerdfonts.com/font-downloads))
 * Standard Bash and basic ROS knowledge.
+* A Nvidia graphics card capable of running hardware accelerated
+  graphics. Although, any recent AMD or Intel GPU will also work flawlessly.
 
 ## How to build the container
 A bash script is provided to build the container, it's execute by entering the
