@@ -1,11 +1,11 @@
 # ROSNoeticDocker
 This repository contains the necessary elements (code and artifacts) to build a
-ROS Noetic container suitable to execute GUI applications in NVidia and
+ROS Noetic container suitable to execute GUI applications in Nvidia and
 non-NVidia docker environments. It includes the possibility to run simulations
 for the TurtleBot 3 robot.
 
 The container is equipped with a few development and network-debug tools such as
-vim, tmux, git, ping-utils, ... in order to program the robots and to diagnose
+vim, tmux, git, ping-utils, ... in order to program the robot and to diagnose
 any issue.
 
 
@@ -13,7 +13,7 @@ any issue.
 * A UNIX-like operating system, preferably Linux. (Ubuntu 20.04 is recommended.)
 * The `glxinfo` command. (It's included with the `mesa-utils` package on Ubuntu.)
 * An operational docker daemon.
-* Preferably a NVidia graphics card capable of running hardware accelerated
+* Preferably a Nvidia graphics card capable of running hardware accelerated
   graphics. Although, any recent AMD or Intel GPU will also work.
 * Standard Bash and basic ROS knowledge.
 
@@ -53,13 +53,11 @@ There are three types of Turtlebot3 to choose from, a environment variable sets
 the desired one. Use the `export` bash command to set this variable.  The
 following table depicts the possible values.
 
-|-----------|-------------------------------------|
 | Type      | `export` command                    |
 |-----------|-------------------------------------|
 | Burger    | `export TURTLEBOT3_MODEL=burger`    |
 | Waffle    | `export TURTLEBOT3_MODEL=waffle`    |
 | Waffle Pi | `export TURTLEBOT3_MODEL=waffle_pi` |
-|-----------|-------------------------------------|
 
 For example:
 ```bash
