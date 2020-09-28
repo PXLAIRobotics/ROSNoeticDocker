@@ -61,7 +61,7 @@ following table depicts the possible values.
 
 For example:
 ```bash
-   <in the container> $ `export TURTLEBOT3_MODEL=burger`
+   <in the container> $ export TURTLEBOT3_MODEL=burger
 ```
 
 After setting the required variable for the robot type, a simulated world can be
