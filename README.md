@@ -91,6 +91,6 @@ correct robot type.
 
 For example to control the burger in the auto racetrack:
 ```bash
-   <in the container> $ `export TURTLEBOT3_MODEL=burger`
+   <in the container> $ export TURTLEBOT3_MODEL=burger
    <in the container> $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 ```
