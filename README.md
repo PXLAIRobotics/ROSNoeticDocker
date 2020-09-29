@@ -8,6 +8,7 @@ The container is equipped with a few development and network-debug tools such as
 vim, tmux, git, ping-utils, ... in order to program the robot and to diagnose
 any issue.
 
+*!!! Note: Do not clone this repository into a path containing a space !!!*
 
 ## Prerequisites
 * A UNIX-like operating system, preferably Linux. (Ubuntu 20.04 is recommended.)
