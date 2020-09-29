@@ -19,6 +19,17 @@ any issue.
 * A Nvidia graphics card capable of running hardware accelerated
   graphics. Although, any recent AMD or Intel GPU will also work flawlessly.
 
+### Known issues
+If Nvidia docker returns the following error:
+
+```bash
+   Docker: Error response from daemon: could not select device driver "" with capabilities: [[gpu]].
+```
+
+Look at the following site to solve it:
+
+[https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#install-guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#install-guide)
+
 ## How to build the container
 A bash script is provided to build the container, it can be executed by entering the
 following command:
