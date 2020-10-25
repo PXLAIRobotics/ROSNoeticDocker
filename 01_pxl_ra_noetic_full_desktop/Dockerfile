@@ -24,6 +24,7 @@ RUN set -x \
         && apt-get install -y openssh-server python3-pip exuberant-ctags \
         && apt-get install -y git vim tmux nano htop sudo curl wget gnupg2 \
         && apt-get install -y  bash-completion \
+        && apt-get install -y ros-noetic-gmapping ros-noetic-slam-gmapping ros-noetic-openslam-gmapping \ 
         && pip3 install powerline-shell  \
         && rm -rf /var/lib/apt/lists/* \
         && useradd -ms /bin/bash user \
