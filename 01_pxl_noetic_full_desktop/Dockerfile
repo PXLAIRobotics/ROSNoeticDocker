@@ -17,7 +17,7 @@ ENV NVIDIA_DRIVER_CAPABILITIES \
 # Install some handy tools.
 RUN set -x \
         && apt-get update \
-        && apt-get upgrade -y \
+        && apt-get --with-new-pkgs upgrade -y \
         && apt-get install -y mesa-utils \ 
         && apt-get install -y iputils-ping \ 
         && apt-get install -y apt-transport-https ca-certificates \

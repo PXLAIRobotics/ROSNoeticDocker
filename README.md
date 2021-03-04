@@ -35,31 +35,23 @@ A bash script is provided to build the container, it can be executed by entering
 following command:
 
 ```bash
-   $ ./0001_build_images.sh
+   $ ./001_build_images.sh
 ```
 
 ## How to start the container
 To start the container execute the script below:
 
 ```bash
-   $ ./0002_start_pxl_ra_noetic_full_desktop.sh
+   $ ./003_start_pxl_noetic_full_desktop.sh
 ```
 This script will check the available GPU and start the container accordingly.
 
 To use multiple bash shells in the container, It's advised to either work with
-`tmux` or execute the script with prefix `0003` from the host:
+`tmux` or execute the script with prefix `004` from the host:
 
 ```bash
-   $ ./0003_attach_bash_to_pxl_ra_noetic_full_desktop.sh
+   $ ./004_attach_bash_to_noetic_full_desktop.sh
 ```
-
-## How to install the Turtlebot3
-Thanks to the included `install_turtlebot3.sh`, which resides in the
-`bin` directory, installing the Turtlebot3 is a breeze.  Execute the
-script from a bash process inside the `pxl_ra_noetic_full_desktop` container,
-followed by a `source` of the `~/.bashrc` file.  Thanks to a mounted volume, the
-Turtlebot3 will be available in the current as well as all new containers
-that are started with the provided `0002` script.
 
 ## How to run the TurtleBot 3 simulations
 There are three types of Turtlebot3 to choose from, an environment variable sets

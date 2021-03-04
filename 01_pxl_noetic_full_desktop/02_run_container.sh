@@ -28,7 +28,7 @@ if [ $vendor == "NVIDIA" ]; then
         -env="XAUTHORITY=$XAUTH" \
         --volume="$XAUTH:$XAUTH" \
         --gpus all \
-        pxl_ra_noetic_full_desktop:latest \
+        pxl_noetic_full_desktop:latest \
         bash
 else
     docker run --privileged -it --rm \
@@ -42,6 +42,6 @@ else
         --env="DISPLAY=$DISPLAY" \
         -e "TERM=xterm-256color" \
         --cap-add SYS_ADMIN --device /dev/fuse \
-        pxl_ra_noetic_full_desktop:latest \
+        pxl_noetic_full_desktop:latest \
         bash
 fi
