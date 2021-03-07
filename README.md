@@ -46,12 +46,19 @@ To start the container execute the script below:
 ```
 This script will check the available GPU and start the container accordingly.
 
+There's also a `004` script which add webcam support for to the container.
+```bash
+   $ ./004_start_pxl_noetic_full_desktop_with_webcam.sh
+```
+
 To use multiple bash shells in the container, It's advised to either work with
-`tmux` or execute the script with prefix `004` from the host:
+`tmux` or execute the script with prefix `005` from the host:
 
 ```bash
-   $ ./004_attach_bash_to_noetic_full_desktop.sh
+   $ ./005_attach_bash_to_noetic_full_desktop.sh
 ```
+
+**Pro-tip: Learn to use `tmux`. It's awesome!**
 
 ## How to run the TurtleBot 3 simulations
 There are three types of Turtlebot3 to choose from, an environment variable sets
