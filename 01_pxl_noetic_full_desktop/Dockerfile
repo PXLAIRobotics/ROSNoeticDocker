@@ -36,6 +36,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 
 USER user
 WORKDIR /home/user
+RUN sudo usermod -a -G video user
 
 RUN git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack  \
         && git clone https://github.com/tmux-plugins/tmux-resurrect ~/.tmux-resurrect
