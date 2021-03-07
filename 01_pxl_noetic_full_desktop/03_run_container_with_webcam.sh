@@ -8,7 +8,7 @@ fi
 
 # A webcam is a character device.
 if [ ! -c /dev/video0 ]; then
-    echo "Exiting script. No webcam found."
+    echo "No webcam found, exiting script."
     exit
 fi
 

@@ -16,21 +16,27 @@ ENV NVIDIA_DRIVER_CAPABILITIES \
 
 # Install some handy tools.
 RUN set -x \
-    && apt-get update \
-    && apt-get --with-new-pkgs upgrade -y \
-    && apt-get install -y mesa-utils \ 
-    && apt-get install -y iputils-ping \ 
-    && apt-get install -y apt-transport-https ca-certificates \
-    && apt-get install -y openssh-server python3-pip exuberant-ctags \
-    && apt-get install -y git vim tmux nano htop sudo curl wget gnupg2 \
-    && apt-get install -y  bash-completion \
-    && apt-get install -y libcanberra-gtk3-0 \
-    && apt-get install -y ros-noetic-gmapping ros-noetic-slam-gmapping ros-noetic-openslam-gmapping \ 
-    && pip3 install powerline-shell  \
-    && rm -rf /var/lib/apt/lists/* \
-    && useradd -ms /bin/bash user \
-    && echo "user:user" | chpasswd && adduser user sudo \
-    && echo "user ALL=(ALL) NOPASSWD: ALL " >> /etc/sudoers
+	&& apt-get update \
+	&& apt-get --with-new-pkgs upgrade -y \
+	&& apt-get install -y mesa-utils \ 
+	&& apt-get install -y iputils-ping \ 
+	&& apt-get install -y apt-transport-https ca-certificates \
+	&& apt-get install -y openssh-server python3-pip exuberant-ctags \
+	&& apt-get install -y git vim tmux nano htop sudo curl wget gnupg2 \
+	&& apt-get install -y bash-completion \
+	&& apt-get install -y libcanberra-gtk3-0 \
+	&& apt-get install -y ros-noetic-turtlebot3 \
+	&& apt-get install -y ros-noetic-turtlebot3-bringup ros-noetic-turtlebot3-description \
+	&& apt-get install -y ros-noetic-turtlebot3-example ros-noetic-turtlebot3-gazebo \
+	&& apt-get install -y ros-noetic-turtlebot3-msgs ros-noetic-turtlebot3-navigation \
+	&& apt-get install -y ros-noetic-turtlebot3-simulations \
+	&& apt-get install -y ros-noetic-turtlebot3-slam ros-noetic-turtlebot3-teleop \
+	&& apt-get install -y ros-noetic-gmapping ros-noetic-slam-gmapping ros-noetic-openslam-gmapping \ 
+	&& pip3 install powerline-shell  \
+	&& rm -rf /var/lib/apt/lists/* \
+	&& useradd -ms /bin/bash user \
+	&& echo "user:user" | chpasswd && adduser user sudo \
+	&& echo "user ALL=(ALL) NOPASSWD: ALL " >> /etc/sudoers
 
 # The OSRF contianer didn't link python3 to python, causing ROS scripts to fail.
 RUN ln -s /usr/bin/python3 /usr/bin/python
