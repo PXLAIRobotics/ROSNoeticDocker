@@ -8,11 +8,6 @@ fi
 
 vendor=`glxinfo | grep vendor | grep OpenGL | awk '{ print $4 }'`
 
-#xhost +local:docker
-
-# --device=/dev/video0:/dev/video0
-# For non root usage:
-# RUN sudo usermod -a -G video developer
 
 if [ $vendor == "NVIDIA" ]; then
     docker run -it --rm \

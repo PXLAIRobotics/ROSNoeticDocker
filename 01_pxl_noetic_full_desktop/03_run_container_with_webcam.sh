@@ -6,16 +6,17 @@ then
     exit
 fi
 
+# A webcam is a character device.
+if [ ! -c /dev/video0 ]; then
+    echo "Exiting script. No webcam found."
+    exit
+fi
+
 vendor=`glxinfo | grep vendor | grep OpenGL | awk '{ print $4 }'`
 
-#xhost +local:docker
-
-# TODO: check if user is part of the video groep.
-# RUN sudo usermod -a -G video $USER
 
 if [ $vendor == "NVIDIA" ]; then
     docker run -it --rm \
-        --privileged \
         --name noetic_desktop \
         --hostname noetic_desktop \
         --device /dev/snd \
