@@ -46,7 +46,7 @@ To start the container execute the script below:
 ```
 This script will check the available GPU and start the container accordingly.
 
-There's also a `004` script which add webcam support for to the container.
+There's also an `004` script which adds webcam support to the container.
 ```bash
    $ ./004_start_pxl_noetic_full_desktop_with_webcam.sh
 ```
