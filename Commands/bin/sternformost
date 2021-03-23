@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export TURTLEBOT3_MODEL=waffle
+roslaunch sternformost sternformost.launch
