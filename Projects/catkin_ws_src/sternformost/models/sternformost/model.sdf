@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+<model name="sternformost">
+  <pose>0 0 0.01 0 0 0</pose>
+  <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <plane>
+              <normal>0 0 1</normal>
+              <size>25.5325 18.45</size>
+            </plane>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <plane>
+              <normal>0 0 1</normal>
+              <size>25.5325 18.45</size>
+            </plane>
+        </geometry>
+	<material>
+          <script>
+		<uri>model://sternformost/materials/scripts</uri>
+		<uri>model://sternformost/materials/textures</uri>		
+            	<name>sternformost</name>
+          </script>
+  	</material>
+      </visual>
+    </link>
+  </model>
+</sdf>
