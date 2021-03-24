@@ -27,8 +27,8 @@ def main():
     
     cv2.createTrackbar("Hue lower bound:", "Filtered", 0, 179, callback_trackbars)
     cv2.createTrackbar("Hue upper bound:", "Filtered", 0, 179, callback_trackbars)
-    cv2.createTrackbar("Saturation lower bound: ", "Filtered", 0, 255, callback_trackbars)
-    cv2.createTrackbar("Saturation upper bound: ", "Filtered", 0, 255, callback_trackbars)
+    cv2.createTrackbar("Saturation lower bound:", "Filtered", 0, 255, callback_trackbars)
+    cv2.createTrackbar("Saturation upper bound:", "Filtered", 0, 255, callback_trackbars)
     cv2.createTrackbar("Value lower bound:", "Filtered", 0, 255, callback_trackbars)
     cv2.createTrackbar("Value upper bound:", "Filtered", 0, 255, callback_trackbars)
 
