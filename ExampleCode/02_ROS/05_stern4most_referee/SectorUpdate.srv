@@ -1,0 +1,6 @@
+string name
+int8 sector 
+--- 
+float64 total_time
+float64 sector_time
+string status
