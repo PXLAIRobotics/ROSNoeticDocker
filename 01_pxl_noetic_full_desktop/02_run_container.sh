@@ -20,9 +20,8 @@ if [ $vendor == "NVIDIA" ]; then
         -v `pwd`/../Commands/bin:/home/user/bin \
         -v `pwd`/../ExampleCode:/home/user/ExampleCode \
         -v `pwd`/../Projects/catkin_ws_src:/home/user/Projects/catkin_ws/src \
-	-v `pwd`/../Data:/home/user/Data \
+        -v `pwd`/../Data:/home/user/Data  \
         -env="XAUTHORITY=$XAUTH" \
-        --volume="$XAUTH:$XAUTH" \
         --gpus all \
         pxl_noetic_full_desktop:latest \
         bash

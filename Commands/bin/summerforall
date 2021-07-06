@@ -1,0 +1,3 @@
+#!/bin/bash
+
+roslaunch summerforall summerforall.launch
