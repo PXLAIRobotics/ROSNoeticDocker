@@ -32,7 +32,7 @@ RUN set -x \
 	&& apt-get install -y ros-noetic-turtlebot3-simulations \
 	&& apt-get install -y ros-noetic-turtlebot3-slam ros-noetic-turtlebot3-teleop \
 	&& apt-get install -y ros-noetic-gmapping ros-noetic-slam-gmapping ros-noetic-openslam-gmapping \ 
-	&& pip3 install powerline-shell  \
+	&& pip3 install powerline-shell dearpygui \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& useradd -ms /bin/bash user \
 	&& echo "user:user" | chpasswd && adduser user sudo \

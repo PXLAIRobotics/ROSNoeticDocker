@@ -5,7 +5,7 @@ import numpy
 
 
 def main():
-    # Create a 400x400 image with a dept of 3.
+    # Create a 400x400 image with a depth of 3.
     image = numpy.zeros( (400,400,3), dtype="uint8")
     # Why a dept of 3?
     #    We do want color, now do we?
