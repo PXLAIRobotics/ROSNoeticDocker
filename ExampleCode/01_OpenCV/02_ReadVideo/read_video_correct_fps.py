@@ -28,8 +28,12 @@ class ThreadedVideo(object):
         
 
     def show_frame(self):
-        cv2.imshow(self.name, self.frame)
-        cv2.waitKey(self.fps_ms)
+        if  self.status:
+            cv2.imshow(self.name, self.frame)
+            cv2.waitKey(self.fps_ms)
+            return True
+        
+        return False
         
 def main():
     source = "../Videos/Meditation_HDV_1080p25_Mp4___TanuriX_Stock_Footage.mp4"
@@ -40,7 +44,8 @@ def main():
 
     while True:
         try:
-            threaded_video.show_frame()
+            if not threaded_video.show_frame():
+                break
         except AttributeError:
             pass
 
