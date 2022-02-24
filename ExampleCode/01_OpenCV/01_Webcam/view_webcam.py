@@ -4,9 +4,13 @@ import cv2
 
 
 def show_webcam(mirror=False):
-    cam = cv2.VideoCapture(0)
+    cam = cv2.VideoCapture(0) # The standard camera should be 0.
+                              # If there are multiple cameras,
+                              # change this parameter to the correct value.
 
     while True:
+        # Read returns retval, image
+        # retval: false if no frames has been grabbed.
         _, img = cam.read()
 
         if mirror:

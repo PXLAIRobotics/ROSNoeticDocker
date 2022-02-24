@@ -10,6 +10,7 @@ def main():
 
     cv2.imshow(window_name, image)
     cv2.waitKey(0) # This will wait indefinitely for a key press.
+                   # Non zero: amount of ms that OpenCV will wait.
 
 if __name__ == "__main__":
     main()

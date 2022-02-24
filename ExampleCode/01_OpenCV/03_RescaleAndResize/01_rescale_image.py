@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Q: Why resize/rescale?
+# A: To prevent computational strain.
 
 import cv2
 
