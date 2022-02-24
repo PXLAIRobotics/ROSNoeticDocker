@@ -65,10 +65,6 @@ def main():
     cv2.imshow("Blur (5,5) Contours", black_image)
     cv2.waitKey()
 
-    
-    
-    
 
-    
 if __name__ == "__main__":
     main()

@@ -3,6 +3,7 @@
 
 import cv2
 
+
 # This works with images and already existing videos.
 def rescale_image(image, scale=0.4):
     width  = int(image.shape[1] * scale)
@@ -24,10 +25,12 @@ def main():
     cv2.waitKey(0)
 
     # Canny edge detection
-    """ Fun Fact
+    """
+    Fun Fact
 
     Canny Edge Detection is a popular edge detection algorithm. It was developed
     by John F. Canny in 1986. It is a multi-stage algorithm.
+    It involves a lot of blurring, ...
 
     See the source on more info about the parameters. 
 
@@ -36,12 +39,13 @@ def main():
     threshold1 = 100
     threshold2 = 200
     canny = cv2.Canny(scaled_image, threshold1, threshold2)
+    
     # Nice to know: Canny uses a Gaussian filter to reduce noise. (5x5 kernel)
     cv2.imshow("Canny (100,200)", canny)
     cv2.waitKey()
 
     # Canny edge detection on a blurred images
-    kernel = (5,5)
+    kernel = (5, 5)
     sigmax = 0
     blurred = cv2.GaussianBlur(scaled_image, kernel, sigmax)
     cv2.imshow("Blurred (5,5)", blurred)
@@ -52,7 +56,7 @@ def main():
     cv2.imshow("Canny (100,200) on blurred (5,5)", canny_blurred)
     cv2.waitKey()
     
-    kernel = (7,7)
+    kernel = (7, 7)
     sigmax = 0
     blurred = cv2.GaussianBlur(scaled_image, kernel, sigmax)
     cv2.imshow("Blurred (7,7)", blurred)
@@ -62,7 +66,6 @@ def main():
     canny_blurred = cv2.Canny(blurred, threshold1, threshold2)
     cv2.imshow("Canny (100,200) on blurred (7,7)", canny_blurred)
     cv2.waitKey()
-
 
 
 if __name__ == "__main__":

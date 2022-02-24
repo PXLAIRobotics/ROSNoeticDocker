@@ -3,6 +3,7 @@
 import cv2
 import numpy
 
+
 def main():
     image = cv2.imread("../Images/Similar-geometric-shapes.png")
     cv2.imshow("Similar geometric shapes", image)
@@ -34,7 +35,7 @@ def main():
     cv2.waitKey()
 
     # Blur
-    kernel = (5,5)
+    kernel = (5, 5)
     sigmax = 0
     blur = cv2.GaussianBlur(image, kernel, sigmax)
     cv2.imshow("Blur (5,5)", blur)

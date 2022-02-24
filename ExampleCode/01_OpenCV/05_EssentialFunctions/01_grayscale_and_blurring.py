@@ -3,6 +3,7 @@
 
 import cv2
 
+
 # This works with images and already existing videos.
 def rescale_image(image, scale=0.4):
     width  = int(image.shape[1] * scale)

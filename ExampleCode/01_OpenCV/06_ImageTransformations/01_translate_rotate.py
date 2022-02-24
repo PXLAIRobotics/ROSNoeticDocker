@@ -8,9 +8,19 @@ import numpy
 # 0 < x  -> move image right
 # 0 < y  -> move image down
 def translate(image, x, y):
-    translation_matrix = numpy.float32( [[1,0,x], [0,1,y]] )
+    translation_matrix = numpy.float32([[1, 0, x], [0, 1, y]])
     dimensions = (image.shape[1], image.shape[0])
 
+    # From https://docs.opencv.org/3.4/d4/d61/tutorial_warp_affine.html:
+    # What is an Affine Transformation?
+    # A transformation that can be expressed in the form of a matrix
+    # multiplication (linear transformation) followed by a vector
+    # addition (translation).
+    #
+    # From the above, we can use an Affine Transformation to express:
+    #  - Rotations (linear transformation)
+    #  - Translations (vector addition)
+    #  - Scale operations (linear transformation)
     return cv2.warpAffine(image, translation_matrix, dimensions)
 
 
@@ -26,8 +36,6 @@ def rotate(image, angle, rotation_point=None):
     dimensions = (width, height)
 
     return cv2.warpAffine(image, rotation_matrix, dimensions)
-
-    
 
 
 def main():
