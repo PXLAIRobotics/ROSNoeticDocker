@@ -29,12 +29,12 @@ def main():
     # Draw all contours 
     # -1 signifies drawing all contours
     black_image = numpy.zeros( (image.shape[0], image.shape[1], 3), dtype="uint8")
-    cv2.drawContours(black_image, contours, -1, (0,255,0), 3)
+    cv2.drawContours(black_image, contours, -1, (0, 255, 0), 3)
     cv2.imshow("Contours", black_image)
     cv2.waitKey()
 
     # Blur
-    kernel = (5,5)
+    kernel = (5, 5)
     sigmax = 0
     blur = cv2.GaussianBlur(image, kernel, sigmax)
     cv2.imshow("Blur (5,5)", blur)

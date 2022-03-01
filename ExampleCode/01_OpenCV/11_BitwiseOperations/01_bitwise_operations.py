@@ -15,12 +15,12 @@ def rescale_image(image, scale=0.4):
         
 
 def main():
-    black = numpy.zeros((500,500), dtype="uint8")
+    black = numpy.zeros((500, 500), dtype="uint8")
     cv2.imshow("Black", black)
     cv2.waitKey(0)
 
     color = 255
-    rectangle = cv2.rectangle(black.copy(), (100,100), (400,400), color, thickness=cv2.FILLED)
+    rectangle = cv2.rectangle(black.copy(), (100, 100), (400, 400), color, thickness=cv2.FILLED)
     cv2.imshow("Rectangle", rectangle)
     cv2.waitKey(0)
 
@@ -54,7 +54,6 @@ def main():
     bitwise_not_circle = cv2.bitwise_not(circle)
     cv2.imshow("NOT (Circle)", bitwise_not_circle)
     cv2.waitKey(0)
-    
     
     
 if __name__ == "__main__":

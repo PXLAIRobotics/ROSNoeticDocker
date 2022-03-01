@@ -50,7 +50,6 @@ def main():
         k = cv2.waitKey(1000) & 0xFF # large wait time to remove freezing
         if k == 113 or k == 27:
             break
-
         
 
 def callback_trackbars(argument):

@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import cv2
 
 # This works with images and already existing videos.
@@ -35,15 +34,14 @@ def main():
 
     # Cropping
     # Remember images are just arrays.
-    x1=155
-    y1=65
-    x2=530
-    y2=340
+    x1 = 155
+    y1 = 65
+    x2 = 530
+    y2 = 340
     cropped = image[y1:y2, x1:x2]
     cv2.imshow("Curiosity Cropped", cropped)
     cv2.waitKey(0)
-    
-    
-    
+
+
 if __name__ == "__main__":
     main()

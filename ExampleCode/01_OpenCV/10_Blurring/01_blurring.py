@@ -21,7 +21,7 @@ def main():
     cv2.waitKey(0)
 
     # Averaging blur
-    kernel   = (7,7)    
+    kernel   = (7, 7)    
     average = cv2.blur(scaled_image, kernel)
     cv2.imshow("Average", average)
     cv2.waitKey()
