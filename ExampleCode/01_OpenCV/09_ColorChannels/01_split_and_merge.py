@@ -21,17 +21,16 @@ def main():
     cv2.waitKey(0)
 
     blue, green, red = cv2.split(scaled_image)
-    cv2.imshow("Blue", blue)
+    cv2.imshow("Blue (Huh! Gray? Wrong channel!)", blue)
     cv2.waitKey(0)
 
-    cv2.imshow("Green", green)
+    cv2.imshow("Green (Huh! Gray? Wrong channel!)", green)
     cv2.waitKey(0)
 
-    cv2.imshow("Red", red)
+    cv2.imshow("Red (Huh! Gray? Wrong channel!)", red)
     cv2.waitKey(0)
 
     # OW, they are all gray! Let's fix this!
-
     black = numpy.zeros(scaled_image.shape[:2], dtype="uint8")
     cv2.imshow("Black", black)
     cv2.waitKey(0)

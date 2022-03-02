@@ -34,21 +34,22 @@ def main():
 
     while True:
         h_low = cv2.getTrackbarPos('Hue lower bound:', 'Filtered')
-        h_up = cv2.getTrackbarPos('Hue upper bound:', 'Filtered')
+        h_up  = cv2.getTrackbarPos('Hue upper bound:', 'Filtered')
         s_low = cv2.getTrackbarPos('Saturation lower bound:', 'Filtered')
-        s_up = cv2.getTrackbarPos('Saturation upper bound:', 'Filtered')
+        s_up  = cv2.getTrackbarPos('Saturation upper bound:', 'Filtered')
         v_low = cv2.getTrackbarPos('Value lower bound:', 'Filtered')
-        v_up = cv2.getTrackbarPos('Value upper bound:', 'Filtered')
+        v_up  = cv2.getTrackbarPos('Value upper bound:', 'Filtered')
 
         bound_low = numpy.array([h_low, s_low, v_low], numpy.uint8)
-        bound_up = numpy.array([h_up, s_up, v_up], numpy.uint8)
+        bound_up  = numpy.array([h_up, s_up, v_up], numpy.uint8)
 
-        mask = cv2.inRange(hsv, bound_low, bound_up)
+        mask     = cv2.inRange(hsv, bound_low, bound_up)
         filtered = cv2.bitwise_and(image, image, mask=mask)
 
         cv2.imshow("Filtered", filtered)
+        
         k = cv2.waitKey(1000) & 0xFF # large wait time to remove freezing
-        if k == 113 or k == 27:
+        if k == 113 or k == 27: # q or ESC to quit.
             break
         
 

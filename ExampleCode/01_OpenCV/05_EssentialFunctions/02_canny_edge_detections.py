@@ -11,7 +11,7 @@ def rescale_image(image, scale=0.4):
     dimensions = (width, height)
 
     return cv2.resize(image, dimensions, interpolation=cv2.INTER_AREA)
-        
+
 
 def main():
     image = cv2.imread("../Images/Bletchley_Park.jpg")
@@ -19,7 +19,7 @@ def main():
     window_name = "Bletchley Park"
 
     scaled_image = rescale_image(image, 0.7)
-    
+
     cv2.imshow(window_name, scaled_image)
     cv2.waitKey(0)
 
@@ -45,7 +45,11 @@ def main():
 
     # Canny edge detection on a blurred images
     kernel = (5, 5)
-    sigmax = 0
+    # Sigmax: Standard deviation of the Gaussian filter. Good values to start
+    # with are between 0.6 and 2.4. Smaller filters cause less blurring, and
+    # allow detection of small, sharp lines. A larger filter increases
+    # processing time and causes more blurring.
+    sigmax = 1.5
     blurred = cv2.GaussianBlur(scaled_image, kernel, sigmax)
     cv2.imshow("Blurred (5,5)", blurred)
     cv2.waitKey()
@@ -56,7 +60,7 @@ def main():
     cv2.waitKey()
     
     kernel = (7, 7)
-    sigmax = 0
+    sigmax = 1.5
     blurred = cv2.GaussianBlur(scaled_image, kernel, sigmax)
     cv2.imshow("Blurred (7,7)", blurred)
     cv2.waitKey()

@@ -16,7 +16,7 @@ def rescale_image(image, scale=0.4):
 def main():
     image = cv2.imread("../Images/1280px-Color-wallpapers-30653-4019293.jpg")
     scaled_image = rescale_image(image, 0.6)
-    cv2.imshow("Color wallpapers", scaled_image)
+    cv2.imshow("Color wallpapers (BGR)", scaled_image)
     cv2.waitKey(0)
 
     # gray scale

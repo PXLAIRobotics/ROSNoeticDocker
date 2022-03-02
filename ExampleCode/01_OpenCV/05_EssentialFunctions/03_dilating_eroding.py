@@ -37,7 +37,7 @@ def main():
     # erode
     kernel = (3, 3)
     eroded = cv2.erode(dilated, kernel, iterations=3)
-    cv2.imshow("Eroded", eroded)
+    cv2.imshow("Eroded (Should be like the first image!)", eroded)
     cv2.waitKey()
     
 
