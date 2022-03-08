@@ -69,11 +69,28 @@ RUN echo LS_COLORS=$LS_COLORS:\'di=1\;33:ln=36\' >> ~/.bashrc \
 RUN rosdep update \
         && echo "source /opt/ros/noetic/setup.bash" >> /home/user/.bashrc
 
+
+# Adding the ardrone
+RUN mkdir -p Projects/ardrone_ws/src 
+RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; cd /home/user/Projects/ardrone_ws; catkin_make'
+RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; cd /home/user/Projects/ardrone_ws; catkin_make'
+
+RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; cd /home/user/Projects/ardrone_ws/src; git clone https://github.com/PXLRoboticsLab/ardrone_autonomy.git'
+RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; cd /home/user/Projects/ardrone_ws/src; git clone https://github.com/PXLRoboticsLab/ardrone_gazebo.git'
+
+RUN echo "source /home/user/Projects/ardrone_ws/devel/setup.bash --extend" >> /home/user/.bashrc
+
+RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; cd /home/user/Projects/ardrone_ws/; . ./devel/setup.bash; catkin_make'
+RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; cd /home/user/Projects/ardrone_ws/; . ./devel/setup.bash; catkin_make'
+
+# Adding a workspace for the students.
 RUN mkdir -p Projects/catkin_ws/src 
 RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; cd /home/user/Projects/catkin_ws; catkin_make'
 RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; cd /home/user/Projects/catkin_ws; catkin_make'
 
+
 RUN echo "source /home/user/Projects/catkin_ws/devel/setup.bash --extend" >> /home/user/.bashrc
+
 STOPSIGNAL SIGTERM
 
 CMD sudo service ssh start && /bin/bash
