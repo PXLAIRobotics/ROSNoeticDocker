@@ -2,7 +2,7 @@
 This repository contains the necessary elements (code and artifacts) to build a
 ROS Noetic container suitable to execute GUI applications in Nvidia and
 non-Nvidia docker environments. It includes the possibility to run simulations
-for the TurtleBot 3 robot.
+for the TurtleBot 3 robot and the ARDrone.
 
 The container is equipped with a few development and network-debug tools such as
 vim, tmux, git, ping-utils, ... in order to program the robot and to diagnose
