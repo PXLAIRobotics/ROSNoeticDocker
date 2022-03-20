@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<launch>
+  <env name="GAZEBO_MODEL_PATH" value="$(find ardrone_gazebo)/models:$(find sternformost)/models:$GAZEBO_MODEL_PATH" />
+  <env name="GAZEBO_PLUGIN_PATH" value="$GAZEBO_PLUGIN_PATH:$(find ardrone_gazebo)/plugins"/> <!--add custom plugins for drone to gazebo plugin path-->
+  <env name="GAZEBO_RESOURCE_PATH" value="$GAZEBO_RESOURCE_PATH:$(find ardrone_gazebo)/meshes"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find sternformost)/worlds/sternformost.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- Spawn simulated quadrotor uav -->
+  <!-- FIRST -->
+  <arg name="ardrone_1"              default="ardrone_1"/>  
+  <arg name="ardrone_1_sdf_robot_file" value="$(find ardrone_gazebo)/models/ardrone_gazebo/ardrone_gazebo.sdf"/>
+  <arg name="ardrone_1_x"            default="0.502445" />
+  <arg name="ardrone_1_y"            default="7.147536" />
+  <arg name="ardrone_1_z"            default="0.0" />
+  <arg name="ardrone_1_roll"         default="0.0"/>
+  <arg name="ardrone_1_pitch"        default="0.0"/>
+  <arg name="ardrone_1_yaw"          default="-0.032309"/>
+  
+  <group ns="$(arg ardrone_1)">
+    <param name="robot_description" command="$(find xacro)/xacro '$(find ardrone_gazebo)/urdf/ardrone_gazebo.urdf'" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+      <param name="publish_frequency" type="double" value="50.0" />
+      <param name="tf_prefix" value="$(arg ardrone_1)" />
+    </node>
+    
+    <node name="$(arg ardrone_1)_spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-file $(arg ardrone_1_sdf_robot_file) -sdf 
+		-x $(arg ardrone_1_x) 
+		-y $(arg ardrone_1_y) 
+		-z $(arg ardrone_1_z)  
+		-R $(arg ardrone_1_roll) 
+		-P $(arg ardrone_1_pitch) 
+		-Y $(arg ardrone_1_yaw) 
+		-model $(arg ardrone_1)"/>
+  </group>
+
+</launch>
