@@ -20,7 +20,7 @@ any issue.
   graphics. Although, any recent AMD or Intel GPU will also work flawlessly.
 
 ## Screenshots
-The end result will be a Ubuntu 20.04 Docker container capable of running ROS
+The end result will be an Ubuntu 20.04 Docker container capable of running ROS
 Noetic (GUI) systems.  A few virtual worlds are also included. The following
 screenshots depict this perfectly.
 
