@@ -25,21 +25,21 @@ A few virtual worlds are included. The following screenshots depict this perfect
 
 The terminal after starting the container.
 <p align="center">
-  <img height="400" src="./images/terminal.png">
+  <img height="300" src="./images/terminal.png">
 </p>
 
 Running GUI applications, including OpenGL should be possible.
 <p align="center">
-  <img height="500" src="./images/glxgears.png">
+  <img height="400" src="./images/glxgears.png">
 </p>
 
 One of the included virtual worlds, summerforall, equipped with an AR.Drone or a Turtlebot3.
 <p align="center">
-  <img height="300" src="./images/ardrone.png">
+  <img height="250" src="./images/ardrone.png">
 </p>
 
 <p align="center">
-  <img height="300" src="./images/turtlebot3.png">
+  <img height="250" src="./images/turtlebot3.png">
 </p>
 
 
