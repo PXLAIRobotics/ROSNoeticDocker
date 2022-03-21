@@ -1,8 +1,8 @@
 # ROSNoeticDocker
-This repository contains the necessary elements (code and artifacts) to build a
-ROS Noetic container suitable to execute GUI applications in Nvidia and
-non-Nvidia docker environments. It includes the possibility to run simulations
-for the TurtleBot 3 robot and the ARDrone.
+This repository contains the necessary elements (code and artifacts) to build
+and run a ROS Noetic container suitable to execute GUI applications in Nvidia
+and non-Nvidia docker environments. It includes the possibility to run
+simulations for the TurtleBot 3 robot and the AR.Drone.
 
 The container is equipped with a few development and network-debug tools such as
 vim, tmux, git, ping-utils, ... in order to program the robot and to diagnose
@@ -12,7 +12,7 @@ any issue.
 
 ## Prerequisites
 * A UNIX-like operating system, preferably Linux. (Ubuntu 20.04 is recommended.)
-* The `glxinfo` command. (It's included with the `mesa-utils` package on Ubuntu. Execute `sudo apt install mesa-utils` before building the image.)
+* The `glxinfo` command. (It's included with the `mesa-utils` package on Ubuntu. So, install this on the Linux host before building this repository. On an Ubuntu host, execute `sudo apt install mesa-utils` to install `glxinfo`.)
 * An operational docker daemon.
 * A terminal with a Nerd Font is highly recommended. ([Nerd Font Download page](https://www.nerdfonts.com/font-downloads))
 * Standard Bash and basic ROS knowledge.
@@ -20,8 +20,9 @@ any issue.
   graphics. Although, any recent AMD or Intel GPU will also work flawlessly.
 
 ## Screenshots
-The end result will be a Docker container capable of running ROS (GUI) systems.
-A few virtual worlds are included. The following screenshots depict this perfectly.
+The end result will be a Ubuntu 20.04 Docker container capable of running ROS
+Noetic (GUI) systems.  A few virtual worlds are also included. The following
+screenshots depict this perfectly.
 
 The terminal after starting the container.
 <p align="center">
