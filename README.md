@@ -12,12 +12,36 @@ any issue.
 
 ## Prerequisites
 * A UNIX-like operating system, preferably Linux. (Ubuntu 20.04 is recommended.)
-* The `glxinfo` command. (It's included with the `mesa-utils` package on Ubuntu.)
+* The `glxinfo` command. (It's included with the `mesa-utils` package on Ubuntu. Execute `sudo apt install mesa-utils` before building the image.)
 * An operational docker daemon.
 * A terminal with a Nerd Font is highly recommended. ([Nerd Font Download page](https://www.nerdfonts.com/font-downloads))
 * Standard Bash and basic ROS knowledge.
 * A Nvidia graphics card capable of running hardware accelerated
   graphics. Although, any recent AMD or Intel GPU will also work flawlessly.
+
+## Screenshots
+The end result will be a Docker container capable of running ROS (GUI) systems.
+A few virtual worlds are included. The following screenshots depict this perfectly.
+
+The terminal after starting the container.
+<p align="center">
+  <img height="400" src="./images/terminal.png">
+</p>
+
+Running GUI applications, including OpenGL should be possible.
+<p align="center">
+  <img height="500" src="./images/glxgears.png">
+</p>
+
+One of the included virtual worlds, summerforall, equipped with an AR.Drone or a Turtlebot3.
+<p align="center">
+  <img height="300" src="./images/ardrone.png">
+</p>
+
+<p align="center">
+  <img height="300" src="./images/turtlebot3.png">
+</p>
+
 
 ### Known issues
 If Nvidia docker returns the following error:
