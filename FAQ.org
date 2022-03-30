@@ -1,0 +1,7 @@
+* Frequently asked questions (FAQ)
+** Q: The ~rommel~ command generates an error: ~SpawnModel: Failure - model name turtlebot3_waffle already exist.~
+    A: This is an known issue with the ~rommel~ command (or ~roslaunch sternformost
+       rommel.launch~). *Nothing to worry about!* Just wait and the world with the
+       TurtleBot3 will be loaded eventually.  The loading process might take
+       some time, due to the large amount of models. Just sit back and relax,
+       everything will be alright.
