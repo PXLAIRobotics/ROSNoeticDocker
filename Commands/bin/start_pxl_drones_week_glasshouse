@@ -1,0 +1,3 @@
+#!/bin/bash
+
+roslaunch pxl_drones_week glasshouse.launch

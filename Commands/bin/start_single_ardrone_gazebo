@@ -1,0 +1,3 @@
+#!/bin/bash
+
+roslaunch ardrone_gazebo single_ardrone.launch 
