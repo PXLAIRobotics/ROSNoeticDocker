@@ -50,13 +50,6 @@ RUN git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack  \
 COPY --chown=user:user ./.tmux.conf /home/user/.tmux.conf
 COPY --chown=user:user ./.powerline.sh /home/user/.powerline.sh
 
-RUN mkdir -p /home/user/.vim/bundle \
-        && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-COPY --chown=user:user ./.vimrc /home/user/.vimrc
- 
-RUN set -x \
-        && vim -E -u NONE -S /home/user/.vimrc -C "+PluginInstall" -C "+qall";  exit 0
 #
 # Set some decent colors if the container needs to be accessed via /bin/bash.
 RUN echo LS_COLORS=$LS_COLORS:\'di=1\;33:ln=36\' >> ~/.bashrc \
