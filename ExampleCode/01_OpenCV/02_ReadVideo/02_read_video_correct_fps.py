@@ -9,6 +9,7 @@ class ThreadedVideo(object):
     def __init__(self, source=0, fps="25", name=""):
         
         self.capture = cv2.VideoCapture(source)
+        # Let the internal buffer store a max of 2 frames.
         self.capture.set(cv2.CAP_PROP_BUFFERSIZE, 2)
     
         self.fps = fps

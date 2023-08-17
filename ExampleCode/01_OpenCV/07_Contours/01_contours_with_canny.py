@@ -16,7 +16,7 @@ def main():
     threshold1 = 127
     threshold2 = 255
     canny = cv2.Canny(gray, threshold1, threshold2)
-    cv2.imshow("Canny (100,200)", canny)
+    cv2.imshow("Canny (124,255)", canny)
     cv2.waitKey()
 
     # cv2.RETR_LIST -> All contours
@@ -48,7 +48,7 @@ def main():
     threshold1 = 127
     threshold2 = 255
     canny = cv2.Canny(gray, threshold1, threshold2)
-    cv2.imshow("Blur (5,5) Canny (100,200)", canny)
+    cv2.imshow("Blur (5,5) Canny (127,255)", canny)
     cv2.waitKey()
 
     # cv2.RETR_LIST -> All contours
