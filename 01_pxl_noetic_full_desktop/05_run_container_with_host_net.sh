@@ -1,5 +1,7 @@
 #!/bin/bash
 
+CURRENT_IP=$(hostname -I | awk '{print $1}')
+
 if ! command -v glxinfo &> /dev/null
 then
     echo "glxinfo command  not found! Execute \'sudo apt install mesa-utils\' to install it."
@@ -23,6 +25,8 @@ if [ $vendor == "NVIDIA" ]; then
         -v `pwd`/../Data:/home/user/Data  \
         -env="XAUTHORITY=$XAUTH" \
         --gpus all \
+        -e ROS_MASTER_URI=http://$CURRENT_IP:11311 \
+        -e ROS_IP=$CURRENT_IP \
         pxl_noetic_full_desktop:latest \
         bash
 else
@@ -38,6 +42,8 @@ else
         --env="DISPLAY=$DISPLAY" \
         -e "TERM=xterm-256color" \
         --cap-add SYS_ADMIN --device /dev/fuse \
+        -e ROS_MASTER_URI=http://$CURRENT_IP:11311 \
+        -e ROS_IP=$CURRENT_IP \
         pxl_noetic_full_desktop:latest \
         bash
 fi
