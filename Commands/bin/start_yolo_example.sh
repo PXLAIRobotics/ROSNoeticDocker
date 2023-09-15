@@ -13,7 +13,14 @@ fi
 # Start a new tmux session in the background
 tmux new-session -d -s ros_session
 
-# Play the rosbag
+# Start roscore
+tmux send-keys -t ros_session "roscore" C-m
+
+# Sleep to give roscore time to fully initialize
+sleep 5
+
+# Split pane and play the rosbag
+tmux split-window -v
 tmux send-keys -t ros_session "rosbag play ~/Data/bags/person.bag -r 0.5" C-m
 
 # Sleep to give some time for rosbag to start
