@@ -31,13 +31,12 @@ RUN set -x \
 	&& apt-get install -y ros-noetic-turtlebot3-msgs ros-noetic-turtlebot3-navigation \
 	&& apt-get install -y ros-noetic-turtlebot3-simulations \
 	&& apt-get install -y ros-noetic-turtlebot3-slam ros-noetic-turtlebot3-teleop \
-	&& apt-get install -y ros-noetic-gmapping ros-noetic-slam-gmapping ros-noetic-openslam-gmapping \ 
+    && apt-get install -y ros-noetic-gmapping ros-noetic-slam-gmapping ros-noetic-openslam-gmapping \
 	&& pip3 install powerline-shell dearpygui \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& useradd -ms /bin/bash user \
 	&& echo "user:user" | chpasswd && adduser user sudo \
 	&& echo "user ALL=(ALL) NOPASSWD: ALL " >> /etc/sudoers
-
 
 # Install CUDA 
 # RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb && \
@@ -48,9 +47,16 @@ RUN set -x \
 # Install yolo v8
 RUN pip3 install ultralytics==8.0.178
 
+RUN set -x \
+	&& apt-get update \
+    && apt-get install -y ros-noetic-multi-map-server ros-noetic-multirobot-map-merge \
+	&& apt-get install -y ros-noetic-hector-sensors-gazebo \
+	&& rm -rf /var/lib/apt/lists/* 
 
 # The OSRF contianer didn't link python3 to python, causing ROS scripts to fail.
 RUN ln -s /usr/bin/python3 /usr/bin/python
+
+
 
 USER user
 WORKDIR /home/user
